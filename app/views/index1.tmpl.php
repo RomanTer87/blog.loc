@@ -14,8 +14,8 @@
 
                             <div class="col-md-12">
                                 <div class="card-body">
-                                <a href = "<?=$post['slug'] ?>"><h5 class="card-title"><?=$post['title'] ?></h5></a>
-                                <p class="card=text"><?=$post['desc']?></p>
+                                <a href = "post?id=<?= $post['post_id'] ?>"><h5 class="card-title"><?= $post['title'] ?></h5></a>
+                                <p class="card=text"><?= $post['excerpt'] ?></p>
                                 <p class="card-text"><small class="text-body-secondary">last update 3 min ago  </small> </p>
                                 </div>   
                             </div>

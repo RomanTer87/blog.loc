@@ -1,15 +1,17 @@
 <?php
 
-define ("PATH",'https://blog.loc/');  //domain url
-define("ROOT", dirname(__DIR__)); //root directory
-
-define("APP", ROOT . '/app'); //app folder
-define("VIEWS", APP . '/views'); //views folder
-define("COMPONENTS", VIEWS . '/components'); // components folder
-define("CONTROLLERS", APP . '/controllers'); // app controllers folder
-
-define("CORE", ROOT . '/core');
-define("PUBLIC", ROOT . '/public');
+require_once(dirname(__DIR__)."/config/config.php");
 
 require_once CORE. "/functions.php";
-require_once CONTROLLERS. "/index.php";
+require_once (CORE. "/classes/DB.php");
+
+$db_config = require(CONFIG. "/db.php");
+//$db = new DB($db_config);
+
+$db = DB::getInstance()->getConnection($db_config); //->query("SELECT * FROM posts")->findAll();
+$db2 = DB::getInstance()->getConnection($db_config);
+
+require_once CORE. "/router.php";
+
+
+
